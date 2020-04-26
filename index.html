@@ -7,37 +7,9 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
       UnityLoader.instantiate("unityContainer", "Build/TheGameWebRepro.json");
-	  function GetUnity () {
-		var unity = document.getElementById("unityContainer");
-		if(unity == null) {
-			unity = document.getElementById("UnityEmbed");
-		}
-		return unity;
-	}
-
-function resizeUnity()
-{
-    var minW = 990;
-    var w;
-    if(document.all)
-    {
-       w = document.body.offsetWidth;
-    }
-    else
-    {
-       w = window.innerWidth;
-    }          
-               
-        if(w < minW)
-        w = minW;
-               
-        var unity = GetUnity();
-        unity.style.width = w;
-}
-
     </script>
   </head>
-  <body onLoad="resizeUnity()" onResize="resizeUnity()">
-    <div id="unityContainer"></div>
+  <body>
+    <div id="unityContainer" style="width: 960px; height: 600px; margin: auto"></div>
   </body>
 </html>
