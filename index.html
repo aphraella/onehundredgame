@@ -6,53 +6,10 @@
     <title>Unity WebGL Player | OneHundredGame</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
-		gameInstance = UnityLoader.instantiate("unityContainer", "Build/TheGameWebRepro.json");
-	   // Callback for the Unity OnClose event
-		window.onbeforeunload = function(e) {
-		 
-		 // These are the messages you're seeing in the gif
-		console.log("Calling OnClose from Browser!");
-		gameInstance.SendMessage("GameLogic", "OnClose");
-	 
-		 // This never shows up correctly for me, but it does prompt
-		 // the player to close their window with a dialogue box
-		 //
-		var dialogText = "Would you like to continue unloading the page?";
-		e.returnValue = dialogText;
-		return dialogText;
-	 };
-
-	  function GetUnity () {
-		var unity = document.getElementById("unityContainer");
-		if(unity == null) {
-			unity = document.getElementById("UnityEmbed");
-		}
-		return unity;
-	}
-
-	function resizeUnity()
-	{
-		var minW = 990;
-		var w;
-		if(document.all)
-		{
-		   w = document.body.offsetWidth;
-		}
-		else
-		{
-		   w = window.innerWidth;
-		}          
-				   
-			if(w < minW)
-			w = minW;
-				   
-			var unity = GetUnity();
-			unity.style.width = w;
-	}
-
+      UnityLoader.instantiate("unityContainer", "Build/TheGameWebRepro.json");
     </script>
   </head>
-  <body onLoad="resizeUnity()" onResize="resizeUnity()">
-    <div id="unityContainer"></div>
+  <body>
+    <div id="unityContainer" style="width: 960px; height: 600px; margin: auto"></div>
   </body>
 </html>
