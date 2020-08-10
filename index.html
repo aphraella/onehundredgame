@@ -33,21 +33,13 @@
 	function resizeUnity()
 	{
 		var minW = 900;
-		var w;
-		if(document.all)
-		{
-		   w = document.body.offsetWidth;
-		}
-		else
-		{
-		   w = window.innerWidth;
-		}          
+		var w = window.innerWidth;          
 				   
-			if(w < minW)
-			w = minW;
-				   
-			var unity = GetUnity();
-			unity.style.width = w;
+		if(w < minW)
+		w = minW;
+			   
+		var unity = GetUnity();
+		unity.style.width = w;
 	}
 
     </script>
