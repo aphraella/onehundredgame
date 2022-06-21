@@ -40,6 +40,15 @@
 			   
 		var unity = GetUnity();
 		unity.style.width = w;
+		
+		var maxH = 2000;
+		var h = window.innerHeight;          
+				   
+		if(h > maxH)
+		h = maxH;
+			   
+		var unity = GetUnity();
+		unity.style.height = h;
 	}
 
     </script>
